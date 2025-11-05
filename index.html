@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGPA Calculator Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+
+  <header>
+    <h1>💠 CGPA Calculator</h1>
+    <button class="mode-toggle" onclick="toggleMode()">🌙 Dark</button>
+  </header>
+
+  <div class="info">
+    <input type="text" id="studentName" placeholder="Enter your name..." />
+  </div>
+
+  <table id="gradesTable">
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Credit Hours</th>
+      <th>Grade</th>
+      <th>GP</th>
+    </tr>
+    <tr>
+      <td><input type="text" class="subject" placeholder="Enter Subject" /></td>
+      <td><input type="number" min="0" max="100" class="marks" /></td>
+      <td><input type="number" min="1" max="5" class="credits" /></td>
+      <td class="grade"></td>
+      <td class="gp"></td>
+    </tr>
+  </table>
+
+  <div class="controls">
+    <button onclick="addSubject()">➕ Add</button>
+    <button onclick="removeSubject()">➖ Remove</button>
+    <button onclick="calculateCGPA()">💯 Calculate</button>
+  </div>
+
+  <div class="progress" id="progressCircle">
+    <div class="progress-value" id="progressValue">0.00</div>
+  </div>
+  <div class="result" id="result"></div>
+
+  <!-- ✅ FIX: Added id="scaleBtn" -->
+  <button class="grading-btn" id="scaleBtn" onclick="toggleGradingScale()">📘 Show Grading Scale</button>
+
+  <div class="grading-scale" id="gradingScale">
+    <table>
+      <tr><th>Letter Grade</th><th>Marks Range</th><th>Grade Points</th></tr>
+      <tr><td>A+</td><td>95 - 100</td><td>4.00</td></tr>
+      <tr><td>A</td><td>86 - 94</td><td>4.00</td></tr>
+      <tr><td>A-</td><td>80 - 85</td><td>3.70</td></tr>
+      <tr><td>B+</td><td>76 - 79</td><td>3.30</td></tr>
+      <tr><td>B</td><td>72 - 75</td><td>3.00</td></tr>
+      <tr><td>B-</td><td>68 - 71</td><td>2.70</td></tr>
+      <tr><td>C+</td><td>64 - 67</td><td>2.30</td></tr>
+      <tr><td>C</td><td>60 - 63</td><td>2.00</td></tr>
+      <tr><td>C-</td><td>57 - 59</td><td>1.70</td></tr>
+      <tr><td>D+</td><td>54 - 56</td><td>1.30</td></tr>
+      <tr><td>D</td><td>50 - 53</td><td>1.00</td></tr>
+      <tr><td>F</td><td>Below 50</td><td>0.00</td></tr>
+    </table>
+  </div>
+  <footer class="footer">
+  <p>Created by <span>Ahmad Khan</span></p>
+</footer>
+
+
+  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c9f1e5b182.mp3?filename=click-124467.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
