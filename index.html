@@ -3,162 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced CGPA Calculator</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Futuristic SGPA & CGPA Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <canvas id="bgCanvas"></canvas>
 
-    <!-- Theme Toggle (Top Right) -->
-    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+    <button class="mode-toggle" onclick="toggleMode()">◑</button>
 
     <div class="container">
-      <h1>🎓 Advanced CGPA Calculator</h1>
+      <h1> Advanced CGPA Calculator</h1>
 
-      <!-- Name Input (Centered) -->
       <div class="name-section">
-        <input type="text" id="studentName" placeholder="Enter Your Name" />
+        <input type="text" id="studentName" placeholder="Enter Your Name" autocomplete="off" />
       </div>
 
-      <table id="gradesTable">
-        <tr>
-          <th>Subject</th>
-          <th>Marks</th>
-          <th>Credit</th>
-          <th>Grade</th>
-          <th>GP</th>
-        </tr>
-        <tr>
-          <td>
-            <input type="" class="subject" placeholder="Enter Subject" />
-          </td>
-          <td><input type="number" min="0" max="100" class="marks" placeholder="Marks"  /></td>
-          <td><input type="number" min="1" max="5" class="credits" placeholder="Credits" /></td>
-          <td class="grade"></td>
-          <td class="gp"></td>
-        </tr>
-      </table>
-
-      <div class="btns">
-        <button onclick="addSubject()">➕ Add Subject</button>
-        <button onclick="removeSubject()">➖ Remove Subject</button>
-        <button onclick="calculateCGPA()">🎯 Calculate CGPA</button>
+      <div class="prev-data-section">
+        <div class="prev-title">Previous Semesters (For CGPA)</div>
+        <input type="number" id="prevCGPA" step="0.01" placeholder="Current CGPA" />
+        <input type="number" id="prevCredits" step="1" placeholder="Total Credits Earned" />
       </div>
 
-      <div class="circle-section">
-        <button id="scaleBtn" onclick="toggleGradingScale()">
-          📘 Show Grading Scale
-        </button>
-
-        <div id="progressCircle">
-          <span id="progressValue">0.00</span>
-        </div>
-
-        <button onclick="toggleConverter()">🎯 Grade ↔ Marks</button>
-      </div>
-
-      <p id="result"></p>
-      <p id="remark"></p>
-
-      <div id="gradingScale" class="hidden">
-        <table>
-          <tr>
-            <th>Grade</th>
-            <th>Marks</th>
-            <th>GPA</th>
-          </tr>
-          <tr>
-            <td>A+</td>
-            <td>95-100</td>
-            <td>4.00</td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>86-94</td>
-            <td>4.00</td>
-          </tr>
-          <tr>
-            <td>A-</td>
-            <td>80-85</td>
-            <td>3.70</td>
-          </tr>
-          <tr>
-            <td>B+</td>
-            <td>76-79</td>
-            <td>3.30</td>
-          </tr>
-          <tr>
-            <td>B</td>
-            <td>72-75</td>
-            <td>3.00</td>
-          </tr>
-          <tr>
-            <td>B-</td>
-            <td>68-71</td>
-            <td>2.70</td>
-          </tr>
-          <tr>
-            <td>C+</td>
-            <td>64-67</td>
-            <td>2.30</td>
-          </tr>
-          <tr>
-            <td>C</td>
-            <td>60-63</td>
-            <td>2.00</td>
-          </tr>
-          <tr>
-            <td>C-</td>
-            <td>57-59</td>
-            <td>1.70</td>
-          </tr>
-          <tr>
-            <td>D+</td>
-            <td>54-56</td>
-            <td>1.30</td>
-          </tr>
-          <tr>
-            <td>D</td>
-            <td>50-53</td>
-            <td>1.00</td>
-          </tr>
-          <tr>
-            <td>F</td>
-            <td>Below 50</td>
-            <td>0.00</td>
-          </tr>
+      <div class="table-wrapper">
+        <table id="gradesTable">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding-left:15px; width: 40%">Subject</th>
+              <th>Marks</th>
+              <th>Cr</th>
+              <th>Grd</th>
+              <th>GP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="subject" placeholder="Subject 1" /></td>
+              <td><input type="number" min="0" max="100" class="marks" placeholder="0-100" /></td>
+              <td><input type="number" min="1" max="5" class="credits" placeholder="1-5" /></td>
+              <td class="grade">-</td>
+              <td class="gp">-</td>
+            </tr>
+            <tr>
+              <td><input type="text" class="subject" placeholder="Subject 2" /></td>
+              <td><input type="number" min="0" max="100" class="marks" placeholder="0-100" /></td>
+              <td><input type="number" min="1" max="5" class="credits" placeholder="1-5" /></td>
+              <td class="grade">-</td>
+              <td class="gp">-</td>
+            </tr>
+            <tr>
+              <td><input type="text" class="subject" placeholder="Subject 3" /></td>
+              <td><input type="number" min="0" max="100" class="marks" placeholder="0-100" /></td>
+              <td><input type="number" min="1" max="5" class="credits" placeholder="1-5" /></td>
+              <td class="grade">-</td>
+              <td class="gp">-</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
+      <div class="btns">
+        <button class="btn-secondary" onclick="addSubject()">+ Add Row</button>
+        <button class="btn-secondary" onclick="removeSubject()">- Remove</button>
+        <button onclick="calculateResults()">Calculate Result</button>
+      </div>
+
+      <div class="circle-section">
+        <button class="btn-secondary" id="scaleBtn" onclick="toggleGradingScale()">Grading Scale</button>
+
+        <div id="progressCircle">
+          <div class="circle-content">
+             <span id="progressLabel" style="font-size:12px; opacity:0.6; margin-bottom:5px">CGPA</span>
+             <span id="progressValue">0.00</span>
+          </div>
+        </div>
+
+        <button class="btn-secondary" onclick="toggleConverter()">Converter</button>
+      </div>
+
+      <div id="result"></div>
+      <div id="sgpaDisplay"></div>
+      <div id="remark"></div>
+
+      <div id="gradingScale" class="hidden">
+        <table>
+          <tr><th>Grade</th><th>Marks</th><th>GPA</th></tr>
+          <tr><td>A+</td><td>95-100</td><td>4.00</td></tr>
+          <tr><td>A</td><td>86-94</td><td>4.00</td></tr>
+          <tr><td>A-</td><td>80-85</td><td>3.70</td></tr>
+          <tr><td>B+</td><td>76-79</td><td>3.30</td></tr>
+          <tr><td>B</td><td>72-75</td><td>3.00</td></tr>
+          <tr><td>B-</td><td>68-71</td><td>2.70</td></tr>
+          <tr><td>C+</td><td>64-67</td><td>2.30</td></tr>
+          <tr><td>C</td><td>60-63</td><td>2.00</td></tr>
+          <tr><td>C-</td><td>57-59</td><td>1.70</td></tr>
+          <tr><td>D+</td><td>54-56</td><td>1.30</td></tr>
+          <tr><td>D</td><td>50-53</td><td>1.00</td></tr>
+          <tr><td>F</td><td><50</td><td>0.00</td></tr>
+        </table>
+      </div>
+
+      <!-- Converter Modal -->
       <div id="converterModal" class="modal">
         <div class="modal-content">
-          <h2 class="modal-title">🎯 Grade ↔ Marks Converter</h2>
-          <input
-            id="gradeInput"
-            type="text"
-            placeholder="Enter Grade (A, B+, etc)"
-          />
-          <input
-            id="marksInput"
-            type="number"
-            placeholder="Enter Marks (0-100)"
-          />
-          <p id="converterResult"></p>
+          <h2 style="margin-bottom:20px">Grade Converter</h2>
+          <input id="convGrade" type="text" placeholder="Enter Grade (e.g. A)" style="width:100%; margin-bottom:10px" />
+          <input id="convMarks" type="number" placeholder="Enter Marks (e.g. 85)" style="width:100%; margin-bottom:20px" />
+          <p id="convResult" style="min-height:20px; color:#4facfe; font-weight:bold"></p>
           <button onclick="toggleConverter()">Close</button>
         </div>
       </div>
+
       <footer>
-        <p class="footer-text">
-          <p>Created by <span class="author">Ahmad Khan</span>
-        </p>
+        <p>Design & Code by <span style="color:#4facfe">Ahmad Khan</span></p>
       </footer>
     </div>
 
-    <audio
-      id="clickSound"
-      src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bbb57a32bb.mp3?filename=click-124467.mp3"
-    ></audio>
+    <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bbb57a32bb.mp3?filename=click-124467.mp3"></audio>
+
     <script src="script.js"></script>
   </body>
 </html>
