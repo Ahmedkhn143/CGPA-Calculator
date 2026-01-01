@@ -1,32 +1,78 @@
-🧮 CGPA Calculator 
+🎓 Modern CGPA Calculator
 
-An advanced, animated CGPA Calculator built using HTML, CSS, and JavaScript.
-This project allows students to easily calculate their CGPA and subject grades, with a beautiful interactive UI, 3D effects, and light/dark mode support.
+A visually stunning, fully responsive SGPA & CGPA Calculator built with modern web technologies. This project features a futuristic "Hyper-Neon" glassmorphism aesthetic, interactive particle backgrounds, and smooth animations to make grade calculation an engaging experience.
 
-🚀 Features
+✨ Features
 
-🎓 Dynamic CGPA & Grade Calculation based on marks and credit hours
+Dynamic Calculation: Instantly calculates SGPA and CGPA based on Marks or Grades.
 
-🧩 Add / Remove Subjects dynamically
+Smart Input System:
 
-💡 Light & Dark Modes for better visibility
+Enter Marks (0-100) to auto-generate Grade and GPA.
 
-🔘 Animated 3D CGPA Circle that changes color based on performance
+Enter Grade (e.g., A+, B) to auto-fetch the GPA.
 
-📊 Interactive Grading Scale Table with show/hide animation
+Immersive UI/UX:
 
-✨ Animated Particle Background (changes per theme)
+"Electric Aurora" Theme: Deep gradient backgrounds with neon accents.
 
-💬 Personalized Results with your name
+Glassmorphism: Frosted glass cards and containers.
 
-💻 Responsive Design for desktop and mobile
+Interactive Background: Particle constellation effect that reacts to mouse movement.
 
-🧠 Built using pure HTML, CSS & JavaScript — no frameworks needed
+Celebration Mode: Confetti explosion for outstanding results (GPA ≥ 3.5).
+
+Animated Results: Count-up numbers and dynamic progress rings.
+
+Fully Responsive: optimized for all devices. Tables transform into elegant cards on mobile screens for better usability.
+
+Utility Tools:
+
+Grading Scale Modal: View the complete marks-to-grade mapping.
+
+Quick Converter: Convert specific grades to marks (and vice-versa) without altering your main calculation.
 
 🛠️ Tech Stack
 
-HTML5 — Structure & layout
+HTML5: Semantic structure.
 
-CSS3 — Styling, glow, and theme transitions
+CSS3: Advanced animations, Flexbox/Grid, CSS Variables, and Media Queries.
 
-JavaScript (ES6) — Logic, animations, and interactivity
+JavaScript (ES6+): Logic for calculation, DOM manipulation, Canvas API for particles, and event handling.
+
+🚀 How to Run
+
+Clone this repository or download the source code.
+
+Simply open the index.html file in any modern web browser (Chrome, Edge, Firefox, Safari).
+
+No installation or server required!
+
+📸 Usage
+
+Enter your Name (optional).
+
+(Optional) Enter Previous CGPA and Credits if you want to calculate your cumulative GPA.
+
+Add subjects using the + Subject button.
+
+Input your Marks OR Grade and the Credit Hours for each subject.
+
+Click Calculate to see your result with animations.
+
+🎨 Customization
+
+The project uses CSS variables for easy theming. You can modify the :root section in the <style> tag to change the color palette:
+
+:root {
+    --primary-color: #f72585;
+    --accent-cyan: #4cc9f0;
+    /* ... */
+}
+
+
+📄 License
+
+This project is open-source and available for personal and educational use.
+
+Designed & Developed by Ahmad Khan
